@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选项卡效果-jQuery实现</title>
+		<style>
+			.tabHeader {
+				display: flex;
+			}
+
+			.tabHeader a {
+				text-decoration: none;
+				background: orange;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+			}
+			
+			.tabHeader a:hover {
+				opacity: 0.6
+			}
+
+			.tabContent {
+				height: 152px;
+			}
+
+			.tabContent div {
+				width: 298px;
+				height: 150px;
+				border: 1px solid green;
+				color: #fff;
+			}
+
+			.content1 {
+				background: #f00;
+			}
+
+			.content2 {
+				background: #0f0;
+			}
+
+			.content3 {
+				background: #00f;
+			}
+			
+			/* 这一步很关键，初始化除了第一个选项卡内容的display值为none，然后点击时再切换其对应元素的display值 */
+			.content2,
+			.content3 {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tabHeader">
+			<a class="tab1" href="#myContent1">选项卡1</a>
+			<a class="tab2" href="#myContent2">选项卡2</a>
+			<a class="tab3" href="#myContent3">选项卡3</a>
+		</div>
+		<div class="tabContent">
+			<div class="content1" id="myContent1">这是内容11111</div>
+			<div class="content2" id="myContent2">这是内容22222</div>
+			<div class="content3" id="myContent3">这是内容33333</div>
+		</div>
+
+		<script src="jquery-3.3.1.js" type="text/javascript"></script>
+		<script>
+			$(document).ready(function() {
+				$(".tabHeader a").on("click", function() {
+					//获取要跳转的元素id
+					var contentId = $(this).attr("href").split("#")[1];
+					//获取选项卡内容,遍历并修改相应选项卡内容的display值
+					var contentList = $(".tabContent div");
+					for (var i = 0; i < contentList.length; i++) {
+						if (contentList[i].id == contentId) {
+							contentList[i].style.display = "block";
+						} else {
+							contentList[i].style.display = "none";
+						}
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

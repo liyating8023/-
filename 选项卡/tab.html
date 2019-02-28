@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选项卡效果-纯CSS实现</title>
+		<style>
+			.tabHeader {
+				display: flex;
+			}
+
+			.tabHeader a {
+				text-decoration: none;
+				background: orange;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+			}
+			
+			.tabHeader a:hover {
+				opacity: 0.6
+			}
+			/* 这一步很关键，用父元素和子元素高度一致，来覆盖多余的元素，和a标签的定位href属性结合使用 */
+			.tabContent {
+				height: 152px;
+				overflow: hidden;
+			}
+			/* 这一步很关键 */
+			.tabContent div {
+				width: 298px;
+				height: 150px;
+				border: 1px solid green;
+				color: #fff;
+			}
+
+			.content1 {
+				background: #f00;
+			}
+
+			.content2 {
+				background: #0f0;
+			}
+
+			.content3 {
+				background: #00f;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tabHeader">
+			<a class="tab1" href="#myContent1">选项卡1</a>
+			<a class="tab2" href="#myContent2">选项卡2</a>
+			<a class="tab3" href="#myContent3">选项卡3</a>
+		</div>
+		<div class="tabContent">
+			<div class="content1" id="myContent1">这是内容11111</div>
+			<div class="content2" id="myContent2">这是内容22222</div>
+			<div class="content3" id="myContent3">这是内容33333</div>
+		</div>
+	</body>
+</html>
