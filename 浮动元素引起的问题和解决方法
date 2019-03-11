@@ -1,0 +1,83 @@
+一、引起的问题
+1.父元素的高度无法被撑开，影响与父元素的同级的元素；
+2.与元素同级的非浮动元素会紧随其后（类似遮盖现象）；
+3.如果一个元素浮动，则该元素之前的元素也需要浮动，否则，会影响页面显示的结构（即通常所说的穿行现象）。
+代码如下：
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta name="description" content="浮动元素引起的问题和解决方法" />
+      <meta name="name" content="floatElementMethod" />
+      <title>浮动元素引起的问题和解决方法</title>
+      <style>
+        .parentElement{
+          background: pink;
+        }
+        .beforFloatElement{
+          width: 100px;
+          height: 200px;
+          background: red;
+          float: left;
+        }
+        .floatElement{
+          width: 100px;
+          height: 200px;
+          background: blue;
+          float: left;
+        }
+        .noFloatElement{
+          width: 100px;
+          height: 200px;
+          background: yellowgreen;
+          float: left;
+        }
+        .parentElement2{
+          width: 400px;
+          height: 100px;
+          background: grey;
+          opacity: 0.5;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="parentElement">
+        <div class="beforFloatElement"></div>
+        <div class="floatElement"></div>
+        <div class="noFloatElement"></div>
+      </div>
+      <div class="parentElement2"></div>
+    </body>
+  </html>
+  
+二、解决方法
+1.为父元素设置固定高度。
+2.为父元素设置overflow:hidden即可清除浮动，让父元素的高度被撑开。
+3.用clear:both样式属性清除元素浮动：可以在父元素外面面，浮动元素的最后面或用伪元素after添加。
+4.使用通用类clearfix;
+.代码如下：
+.parentElement{
+  background: pink;
+  height:400px;
+}
+.parentElement{
+  background: pink;
+  overflow:hidden
+}
+.noFloatElement{
+  width: 100px;
+  height: 200px;
+  background: yellowgreen;
+  clear:both;
+}
+.noFloatElement:after{
+  content: '';
+  display: blokc;
+  clear: both;
+}
+.clearfix:after{
+  content: '';
+  display: blokc;
+  clear: both;
+}
+
+    
