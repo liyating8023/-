@@ -76,7 +76,7 @@
 }
 .clearfix:after{
   content: '';
-  display: blokc;
+  display: block;
   clear: both;
 }
 
