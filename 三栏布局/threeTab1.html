@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="三栏布局-浮动方法" />
+    <meta name="name" content="threeTab-float" />
+    <meta charset="utf-8" />
+    <title>三栏布局-浮动方法</title>
+    <style>
+      html *{
+        padding: 0;
+        margin: 0;
+      }
+      div{
+        height: 200px;
+      }
+      .left{
+        width: 200px;
+        float: left;
+        background: pink;
+      }
+      .center{
+        background: gray;
+        color: #fff;
+      }
+      .right{
+        width: 200px;
+        float: right;
+        background: greenyellow;
+      }
+      .right::after{
+        content:'';
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabWrapper">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        <h2>浮动解决方案</h2>
+        1.这是三栏布局的浮动解决方案；
+        2.center宽度为父元素的100%,可以通过设置margin-left和margin-right为200px来让center的宽度为（父元素-400px）
+      </div>
+    </div>
+  </body>
+</html>

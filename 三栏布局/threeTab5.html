@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="三栏布局-网格布局" />
+    <meta name="name" content="threeTab-grid" />
+    <meta charset="utf-8" />
+    <title>三栏布局-网格布局</title>
+    <style>
+      html * {
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        height: 200px;
+      }
+      .tabWrapper {
+        width: 100%;
+        display: grid;
+        grid-template-rows: 200px;
+        grid-template-columns: 200px auto 200px;
+      }
+      .left {
+        background: pink;
+      }
+      .center {
+        background: gray;
+        color: #fff;
+      }
+      .right {
+        background: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabWrapper">
+      <div class="left"></div>
+      <div class="center">
+        <h2>表格解决方案</h2>
+        1.这是三栏布局的表格解决方案；
+        2.center宽度为（父元素-400px）
+      </div>
+      <div class="right"></div>
+    </div>
+  </body>
+</html>

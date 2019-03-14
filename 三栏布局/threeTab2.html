@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="三栏布局-绝对定位" />
+    <meta name="name" content="threeTab-absolute" />
+    <meta charset="utf-8" />
+    <title>三栏布局-绝对定位</title>
+    <style>
+      html *{
+        padding: 0;
+        margin: 0;
+      }
+      div{
+        height: 200px;
+      }
+      .tabWrapper{
+        position: relative;
+      }
+      .left{
+        width: 200px;
+        position: absolute;
+        left: 0;
+        background: pink;
+      }
+      .center{
+        background: gray;
+        color: #fff;
+        position: absolute;
+        left: 200px;
+        right: 200px;
+      }
+      .right{
+        width: 200px;
+        position: absolute;
+        right: 0;
+        background: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabWrapper">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        <h2>绝对定位解决方案</h2>
+        1.这是三栏布局的绝对定位解决方案；
+        2.center宽度为（父元素-400px）
+      </div>
+    </div>
+  </body>
+</html>
