@@ -1,10 +1,25 @@
 三栏布局有五种方法：
-方法一：浮动布局，div排列顺序为left，right，center，然后left和right分别向左和向右浮动；         center的宽度为父元素的100%，可以通过设置center的margin-left和margin-right为            300px，来让center的宽度为（父元素-400px）。
-方法二：绝对定位布局，div排列顺序为left，center，right，然后left和right的position为            absolute，left的css属性left为0，right的css属性right为0，center的css属性left和         right都为200px，这样center就会自适应宽度，宽度为（父元素-400px）。
-方法三：CSS3新属性flex布局，div排列顺序为left，center，right，然后父元素的display值为          flex，left和right的width值为200px，center的flex值为1，这样center就会自适应宽           度，宽度为（父元素-400px）。
-方法四：表格布局，div排列顺序为left，center，right，然后父元素的display值为table，父元素        的width给定100%或其他值，left、center和right的display值为table-cell，left和           right的width值为200px，根据单元格宽度自适应的特点，center会自适应宽度，宽度为
-      （父元素-400px）。
-方法五：网格布局，div排列顺序为left，center，right，然后父元素的CSS属性设置为                   display:grid;  /*网格布局*/
+方法一：浮动布局。
+       div排列顺序为left，right，center；
+       然后left和right分别向左和向右浮动；
+       center的宽度为父元素的100%，可以通过设置center的margin-left和margin-right为300px，来让center的宽度为（父元素-400px）。
+方法二：绝对定位布局。
+       div排列顺序为left，center，right；
+       然后left和right的position为absolute，left的css属性left为0，right的css属性right为0；
+       center的css属性left和right都为200px，这样center就会自适应宽度，宽度为（父元素-400px）。
+方法三：CSS3新属性flex布局。
+       div排列顺序为left，center，right；
+       然后父元素的display值为flex，left和right的width值为200px；
+       center的flex值为1，这样center就会自适应宽度，宽度为（父元素-400px）。
+方法四：表格布局。
+       div排列顺序为left，center，right；
+       然后父元素的display值为table，父元素的width给定100%或其他值；
+       left、center和right的display值为table-cell，left和right的width值为200px，根据单元格宽度自适应的特点，
+       center会自适应宽度，宽度为（父元素-400px）。
+方法五：网格布局。
+       div排列顺序为left，center，right；
+       然后父元素的CSS属性设置为：
+       display:grid;  /*网格布局*/
        width:100%;
        grid-template-rows: 200px;  /*网格行高为200px*/
        grid-template-columns: 200px auto 200px;  /*网格的宽度分别为200px,auto,200px*/
